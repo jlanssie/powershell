@@ -1,3 +1,5 @@
+# Functions
+
 # Reload Powershell
 
 Function reload_powershell { & $profile }
