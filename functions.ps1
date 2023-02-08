@@ -16,17 +16,16 @@ Function prettify { npx prettier --write . }
 
 Function pull { git pull }
 
-Function push([string]${commitMessage}) {
+Function push([string]${message}) {
     ${localGitBranch} = git rev-parse --abbrev-ref HEAD
     ${remoteGitBranch} = ${localGitBranch}
+    
+    ${commitMessage} = ${localGitBranch} + " - update"
+    if(${message} -ne '') {
+       ${commitMessage} = ${localGitBranch} + " " + ${message}
+    }
 
     git add -A
-
-    if(${commitMessage} = '') {
-       ${commitMessage} = ${localGitBranch} + " - update"
-    } else {
-       ${commitMessage} = ${localGitBranch} + ${commitMessage}
-    }
 
     git commit -m ${commitMessage}
 
