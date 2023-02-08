@@ -20,9 +20,9 @@ Function push([string]${message}) {
     ${localGitBranch} = git rev-parse --abbrev-ref HEAD
     ${remoteGitBranch} = ${localGitBranch}
     
-    ${commitMessage} = ${localGitBranch} + " - update"
+    ${commitMessage} = ${localGitBranch} + ' - update'
     if(${message} -ne '') {
-       ${commitMessage} = ${localGitBranch} + " " + ${message}
+       ${commitMessage} = ${localGitBranch} + ' ' + ${message}
     }
 
     git add -A
