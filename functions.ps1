@@ -22,10 +22,10 @@ Function push([string]${commitMessage}) {
 
     git add -A
 
-    if((${commitMessage} = $null) -or (${commitMessage} = '')) {
-       ${commitMessage} = ${localGitBranch}+"- update"
+    if(${commitMessage} = '') {
+       ${commitMessage} = ${localGitBranch} + " - update"
     } else {
-       ${commitMessage} = ${localGitBranch}+"- update"
+       ${commitMessage} = ${localGitBranch} + ${commitMessage}
     }
 
     git commit -m ${commitMessage}
