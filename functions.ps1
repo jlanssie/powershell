@@ -25,7 +25,7 @@ Function push([string]${commitMessage}) {
     if((${commitMessage} = $null) -or (${commitMessage} = '')) {
        ${commitMessage} = ${localGitBranch}+"- update"
     } else {
-       ${commitMessage} = ${localGitBranch}+$1
+       ${commitMessage} = ${localGitBranch}+"- update"
     }
 
     git commit -m ${commitMessage}
