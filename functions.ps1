@@ -12,17 +12,6 @@ Function repos { cd $env:REPOS_DIR }
 
 Function prettify { npx prettier --write . }
 
-# Tidy
-
-Function tidy { 
-   ${paths} = "C:\Users\JLSCP47\Downloads\*", "C:\Users\JLSCP47\OneDrive - Inetum-Realdolmen\Pictures\Screenshots\*" 
-
-   foreach (${path} in ${paths})
-   {
-     Remove-Item -Path (${path} -Recurse
-   }
-}
-
 # Git 
 
 Function pull { git pull }
