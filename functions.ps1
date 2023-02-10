@@ -2,7 +2,7 @@
 
 # Reload Powershell
 
-Function reload_powershell { & $profile }
+Function reload-powershell { & $profile }
 
 # Go to locations
 
